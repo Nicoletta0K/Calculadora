@@ -13,8 +13,8 @@ public class Operaciones {
     public double getValor(){
     return valor;  
 }
-    public double setValor(double valor){
-    return valor;  
+    public void setValor(double valor){
+    this.valor = valor;
 }
     public void setResultado(double resultado) {
         this.resultado = resultado;
@@ -24,7 +24,7 @@ public class Operaciones {
     }
 
     public void setOperacion(String operacion) {
-        this.operador  = operador;
+        this.operador  = operacion;
     }
 
     public void sumar(){
