@@ -5,8 +5,6 @@
 import modelo.Calculadora;
 import vista.FrmCalculadora;
 import javax.swing.JOptionPane;
-import excepciones.DivisionPorCeroException;
-import excepciones.ValorInvalidoException;
 /**
  *
  * @author María J
