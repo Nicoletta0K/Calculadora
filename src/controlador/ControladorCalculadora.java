@@ -1,21 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controlador;
+
 import modelo.Operaciones;
 import vista.FrmCalcu;
-import javax.swing.JOptionPane;
-/**
- *
- * @author María J
- */
+
 public class ControladorCalculadora {
     private FrmCalcu vista;
     private Operaciones modelo;
     private double numero1;
     private double numero2;
     private String operacion;
+    private String textoActual = "";
 
     public ControladorCalculadora(FrmCalcu vista, Operaciones modelo) {
         this.vista = vista;
@@ -25,6 +19,7 @@ public class ControladorCalculadora {
         operacion = "";
         agregarEventos();
     }
+
     private void agregarEventos() {
         vista.getBtnCero().addActionListener(e -> agregarNumero(0));
         vista.getBtnUno().addActionListener(e -> agregarNumero(1));
@@ -36,6 +31,10 @@ public class ControladorCalculadora {
         vista.getBtnSiete().addActionListener(e -> agregarNumero(7));
         vista.getBtnOcho().addActionListener(e -> agregarNumero(8));
         vista.getBtnNueve().addActionListener(e -> agregarNumero(9));
+
+        vista.getBtnPunto().addActionListener(e -> agregarPunto());
+        vista.getBtnNegativo().addActionListener(e -> cambiarSigno());
+
         vista.getBtnSuma().addActionListener(e -> seleccionarOperacion("+"));
 
         vista.getBtnResta().addActionListener(e -> seleccionarOperacion("-"));
@@ -48,7 +47,12 @@ public class ControladorCalculadora {
 
             double resultado = calcular();
 
-            vista.setTextoPantalla(String.valueOf(resultado));
+            String texto = (resultado == (long) resultado)
+                ? String.valueOf((long) resultado)
+                : String.valueOf(resultado);
+
+            vista.setTextoPantalla(texto);
+            textoActual = texto;
 
         });
         vista.getBtnAC().addActionListener(e -> {
@@ -68,28 +72,36 @@ public class ControladorCalculadora {
 
     }
 
-    public void agregarNumero(double numero) {
-        if(operacion.equals("")) {
-            numero1 = numero1 * 10 + numero;
+    public void agregarNumero(int numero) {
+        textoActual += numero;
+        vista.setTextoPantalla(textoActual);
+    }
 
-            vista.setTextoPantalla(String.valueOf(numero1));
-        } else {
-            numero2 = numero2 * 10 + numero;
-            vista.setTextoPantalla(String.valueOf(numero2));
+    public void agregarPunto() {
+        if (!textoActual.contains(".")) {
+            textoActual += ".";
+            vista.setTextoPantalla(textoActual);
         }
     }
 
-    public void seleccionarOperacion(String op) {
-        if(numero1 == 0) {
-
-            JOptionPane.showMessageDialog(null,"Debe ingresar el primer número.");
-            return;
+    public void cambiarSigno() {
+        if (textoActual.startsWith("-")) {
+            textoActual = textoActual.substring(1);
+        } else if (!textoActual.isEmpty()) {
+            textoActual = "-" + textoActual;
         }
+        vista.setTextoPantalla(textoActual);
+    }
+
+    public void seleccionarOperacion(String op) {
+        numero1 = Double.parseDouble(textoActual.isEmpty() ? "0" : textoActual);
         operacion = op;
+        textoActual = "";
     }
 
     public double calcular() {
         double resultado = 0;
+        numero2 = Double.parseDouble(textoActual.isEmpty() ? "0" : textoActual);
         try {
             modelo.setResultado(numero1);
             modelo.setValor(numero2);
@@ -107,18 +119,15 @@ public class ControladorCalculadora {
                     modelo.dividir();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null,
-                            "Seleccione una operación.");
                     break;
             }
             resultado = modelo.getResultado();
         } catch(ArithmeticException e) {
-            JOptionPane.showMessageDialog(null,
-                    e.getMessage());
         }
         return resultado;
     }
     public void limpiarTodo() {
+        textoActual = "";
         numero1 = 0;
         numero2 = 0;
         operacion = "";

@@ -18,7 +18,6 @@ public class FrmCalcu extends javax.swing.JFrame {
      */
     public FrmCalcu() {
         initComponents();
-        initComponents();
     new ControladorCalculadora(this, new Operaciones());
     }
 
