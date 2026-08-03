@@ -242,15 +242,41 @@ public class FrmCalcu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    public String getTextoPantalla() {
+        return btnPantalla.getText();
+    }
+    public void setTextoPantalla(String texto) {
+        btnPantalla.setText(texto);
+    }
+    public void mostrarError(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Error",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+
+    // ---- Getters para que el Controlador enganche los ActionListener ----
+    public javax.swing.JButton getBtnAC()          { return btnAC; }
+    public javax.swing.JButton getBtnC()           { return btnC; }        // borrar último carácter
+    public javax.swing.JButton getBtnBorrar()      { return btnBorrar; }   // borrar pantalla (CE)
+    public javax.swing.JButton getBtnSuma()        { return btnSuma; }
+    public javax.swing.JButton getBtnResta()       { return btnResta; }
+    public javax.swing.JButton getBtnMultiplicar() { return btnMultiplicar; }
+    public javax.swing.JButton getBtnDivision()    { return btnDivision; }
+    public javax.swing.JButton getBtnIgual()       { return btnIgual; }
+    public javax.swing.JButton getBtnPunto()       { return btnPunto; }
+    public javax.swing.JButton getBtnNegativo()    { return btnNegativo; } // +/-
+    public javax.swing.JButton getBtnCero()        { return btnCero; }
+    public javax.swing.JButton getBtnUno()         { return btnUno; }
+    public javax.swing.JButton getBtnDos()         { return btnDos; }
+    public javax.swing.JButton getBtnTres()        { return btnTres; }
+    public javax.swing.JButton getBtnCuatro()      { return btnCuatro; }
+    public javax.swing.JButton getBtnCinco()       { return btnCinco; }
+    public javax.swing.JButton getBtnSeis()        { return btnSeis; }
+    public javax.swing.JButton getBtnSiete()       { return btnSiete; }
+    public javax.swing.JButton getBtnOcho()        { return btnOcho; }
+    public javax.swing.JButton getBtnNueve()       { return btnNueve; }
+    public javax.swing.JLabel  getBtnPantalla()    { return btnPantalla; }
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -261,9 +287,6 @@ public class FrmCalcu extends javax.swing.JFrame {
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new FrmCalcu().setVisible(true));
     }
 
