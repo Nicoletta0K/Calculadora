@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-
+import controlador.ControladorCalculadora;
+import modelo.Operaciones;
 /**
  *
  * @author María J
@@ -17,6 +18,8 @@ public class FrmCalcu extends javax.swing.JFrame {
      */
     public FrmCalcu() {
         initComponents();
+        initComponents();
+    new ControladorCalculadora(this, new Operaciones());
     }
 
     /**
