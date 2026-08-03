@@ -38,14 +38,17 @@ public class Operaciones {
     public void multiplicar(){
         resultado*= valor; 
     }
-    
-    public void dividir(){
-        resultado/= valor; 
-    }
-    
-    public void reiniciar(){
+        public void dividir(){
+        if (valor == 0){
+                    throw new ArithmeticException("No se puede dividir entre cero.");
+                } else {
+                    resultado /= valor;
+        }
+        }
+      public void reiniciar(){
                 this.valor = 0;
         this.resultado = 0;
         this.operador= "+";
     }
-}
+    }
+
