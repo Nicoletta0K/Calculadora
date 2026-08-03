@@ -55,64 +55,64 @@ public class FrmCalcu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnC.setText("jButton3");
+        btnC.setText("CE");
 
         btnAC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAC.setText("AC");
 
         btnBorrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnBorrar.setText("jButton3");
+        btnBorrar.setText("<-");
 
         btnSuma.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSuma.setText("jButton3");
+        btnSuma.setText("+");
 
         btnSiete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSiete.setText("jButton3");
+        btnSiete.setText("7");
 
         btnOcho.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnOcho.setText("jButton3");
+        btnOcho.setText("8");
 
         btnNueve.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnNueve.setText("jButton3");
+        btnNueve.setText("9");
 
         btnResta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnResta.setText("jButton3");
+        btnResta.setText("-");
 
         btnCuatro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnCuatro.setText("jButton3");
+        btnCuatro.setText("4");
 
         btnCinco.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnCinco.setText("jButton3");
+        btnCinco.setText("5");
 
         btnSeis.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnSeis.setText("jButton3");
+        btnSeis.setText("6");
 
         btnMultiplicar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnMultiplicar.setText("jButton3");
+        btnMultiplicar.setText("x");
 
         btnUno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnUno.setText("jButton3");
+        btnUno.setText("1");
 
         btnDos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnDos.setText("jButton3");
+        btnDos.setText("2");
 
         btnTres.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnTres.setText("jButton3");
+        btnTres.setText("3");
 
         btnDivision.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnDivision.setText("jButton3");
+        btnDivision.setText("/");
 
         btnCero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnCero.setText("jButton3");
+        btnCero.setText("0");
 
         btnIgual.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnIgual.setText("jButton3");
+        btnIgual.setText("=");
 
         btnPunto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnPunto.setText("jButton3");
+        btnPunto.setText(".");
 
         btnNegativo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnNegativo.setText("jButton3");
+        btnNegativo.setText("+/-");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
