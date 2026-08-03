@@ -4,20 +4,20 @@
  */
 package controlador;
 import modelo.Operaciones;
-import vista.FrmCalculadora;
+import vista.FrmCalcu;
 import javax.swing.JOptionPane;
 /**
  *
  * @author María J
  */
 public class ControladorCalculadora {
-    private FrmCalculadora vista;
+    private FrmCalcu vista;
     private Operaciones modelo;
     private double numero1;
     private double numero2;
     private String operacion;
 
-    public ControladorCalculadora(FrmCalculadora vista, Operaciones modelo) {
+    public ControladorCalculadora(FrmCalcu vista, Operaciones modelo) {
         this.vista = vista;
         this.modelo = modelo;
         numero1 = 0;
